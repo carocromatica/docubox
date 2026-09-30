@@ -1,12 +1,12 @@
 // Para agregar contenido, copia un bloque y edítalo. No hace falta tocar el HTML.
 // Las categorías deben escribirse exactamente como en esta lista.
-const CATEGORIAS = ["Diseño", "Desarrollo", "Marketing", "Web", "IA", "Referentes", "Inspiración"];
+const CATEGORIAS = ["Diseño", "Desarrollo", "Marketing", "Web", "IA"];
 
 // `imagen` es opcional: ruta dentro de assets/img/ o una URL. Sin imagen se muestra un recuadro de color.
 const CREADORES = [
   {
     nombre: "Carmen Gerea",
-    categorias: ["Marketing", "Referentes"],
+    categorias: ["Marketing"],
     imagen: "assets/img/carmen-gerea.jpg",
     descripcion:
       "Asesora de negocios con más de 20 años en e-commerce, UX y estrategia digital. Fundadora de FREED, su laboratorio de ideas.",
@@ -18,7 +18,7 @@ const CREADORES = [
   },
   {
     nombre: "midudev",
-    categorias: ["Desarrollo", "Web", "IA", "Referentes"],
+    categorias: ["Desarrollo", "Web", "IA"],
     imagen: "assets/img/midudev.jpg",
     descripcion:
       "Miguel Ángel Durán. Full Stack JavaScript con 15 años de experiencia: cursos, directos y contenido sobre programación, web e IA.",
@@ -33,7 +33,7 @@ const CREADORES = [
   },
   {
     nombre: "Mokkapp",
-    categorias: ["Diseño", "IA", "Referentes"],
+    categorias: ["Diseño", "IA"],
     imagen: "assets/img/mokkapp.jpg",
     descripcion:
       "Xavi, diseñador de producto digital con más de 10 años de experiencia. Tips de UX/UI, Figma y herramientas con IA.",
@@ -44,7 +44,7 @@ const CREADORES = [
   },
   {
     nombre: "Código Facilito",
-    categorias: ["Desarrollo", "Web", "Referentes"],
+    categorias: ["Desarrollo", "Web"],
     imagen: "assets/img/codigofacilito.jpg",
     descripcion:
       "Plataforma de formación en programación en español desde 2010: HTML, JavaScript, React, Python, Go y más.",
@@ -55,7 +55,7 @@ const CREADORES = [
   },
   {
     nombre: "Fazt Code",
-    categorias: ["Desarrollo", "Web", "Referentes"],
+    categorias: ["Desarrollo", "Web"],
     imagen: "assets/img/fazt-code.jpg",
     descripcion:
       "Tutoriales y proyectos web con ejemplos prácticos de Python, JavaScript, Go, Rust, React, Node.js y bases de datos.",
@@ -63,7 +63,7 @@ const CREADORES = [
   },
   {
     nombre: "Fazt",
-    categorias: ["Desarrollo", "Web", "Referentes"],
+    categorias: ["Desarrollo", "Web"],
     imagen: "assets/img/fazt.jpg",
     descripcion:
       "Videos de programación, desarrollo web y tecnología: desde las bases de un lenguaje hasta subir tu sitio o aplicación.",

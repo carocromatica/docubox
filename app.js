@@ -1,5 +1,6 @@
 const el = (tag, props = {}, ...hijos) => {
-  const n = Object.assign(document.createElement(tag), props);
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) k.includes("-") ? n.setAttribute(k, v) : (n[k] = v);
   n.append(...hijos);
   return n;
 };
@@ -12,27 +13,27 @@ const imagen = (src, alt) =>
     ? el("img", { className: "foto", src, alt, loading: "lazy" })
     : el("div", { className: "foto foto-vacia", textContent: "📄", ariaHidden: "true" });
 
+const cabecera = (src, alt, ...titulo) =>
+  el("div", { className: "cabecera" }, imagen(src, alt), el("div", { className: "titulo" }, ...titulo));
+
+const ICONOS = { LinkedIn: "linkedin", YouTube: "youtube", Instagram: "instagram", Twitch: "twitch", X: "twitter-x", GitHub: "github", Web: "globe" };
+const icono = ({ red, url }) =>
+  el("a", { href: url, className: "icono", title: red, target: "_blank", rel: "noopener noreferrer", ariaLabel: red, "data-red": red.toLowerCase() },
+    el("span", { className: "ico", style: `--icono: url(assets/icons/${ICONOS[red] || "globe"}.svg)` }));
+
 const tarjetaCreador = c =>
   el("article", { className: "tarjeta" },
-    imagen(c.imagen, `Foto de ${c.nombre}`),
-    el("div", { className: "cuerpo" },
-      etiquetas(c.categorias),
-      el("h3", { textContent: c.nombre }),
-      el("p", { textContent: c.descripcion }),
-      el("div", { className: "enlaces" }, ...c.enlaces.map(e => enlace(e.url, e.red)))
-    )
+    cabecera(c.imagen, `Foto de ${c.nombre}`, el("h3", { textContent: c.nombre }), etiquetas(c.categorias)),
+    el("p", { textContent: c.descripcion }),
+    el("div", { className: "enlaces" }, ...c.enlaces.map(icono))
   );
 
 const tarjetaArticulo = a =>
   el("article", { className: "tarjeta" },
-    imagen(a.imagen, ""),
-    el("div", { className: "cuerpo" },
-      etiquetas(a.categorias),
-      el("h3", { textContent: a.titulo }),
-      el("span", { className: "fuente", textContent: a.fuente }),
-      el("p", { textContent: a.descripcion }),
-      enlace(a.url, "Leer artículo →", "leer")
-    )
+    cabecera(a.imagen, "", el("h3", { textContent: a.titulo }), el("span", { className: "fuente", textContent: a.fuente })),
+    etiquetas(a.categorias),
+    el("p", { textContent: a.descripcion }),
+    enlace(a.url, "Leer artículo →", "leer")
   );
 
 const SECCIONES = {
