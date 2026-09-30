@@ -1,9 +1,11 @@
-// Para agregar contenido, copia un bloque y edítalo. No hace falta tocar index.html.
+// Para agregar contenido, copia un bloque y edítalo. No hace falta tocar el HTML.
+// Las categorías deben escribirse exactamente como en esta lista.
+const CATEGORIAS = ["Diseño", "Desarrollo", "Marketing", "Web", "IA", "Referentes", "Inspiración"];
 
 const CREADORES = [
   {
     nombre: "Carmen Gerea",
-    area: "Marketing digital",
+    categorias: ["Marketing", "Referentes"],
     descripcion:
       "Asesora de negocios con más de 20 años en e-commerce, UX y estrategia digital. Fundadora de FREED, su laboratorio de ideas.",
     enlaces: [
@@ -14,7 +16,7 @@ const CREADORES = [
   },
   {
     nombre: "midudev",
-    area: "Desarrollo web",
+    categorias: ["Desarrollo", "Web", "IA", "Referentes"],
     descripcion:
       "Miguel Ángel Durán. Full Stack JavaScript con 15 años de experiencia: cursos, directos y contenido sobre programación, web e IA.",
     enlaces: [
@@ -31,7 +33,7 @@ const CREADORES = [
 const ARTICULOS = [
   {
     titulo: "How to Build a Figma-to-Code Design Token Pipeline — Part 1",
-    area: "Diseño y desarrollo",
+    categorias: ["Diseño", "Desarrollo"],
     fuente: "Design Systems Collective",
     descripcion:
       "Cómo convertir variables de Figma (exportadas a JSON) en código con Style Dictionary, evitando que diseño y código diverjan (design drift).",
