@@ -4,31 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Artículos · Caro's Docubox</title>
-  <meta name="description" content="Creadores de contenido para seguir y artículos recomendados sobre marketing y desarrollo web.">
+  <meta name="description" content="Creadores de contenido para seguir y artículos recomendados sobre marketing, diseño y desarrollo web.">
   <link rel="icon" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header class="contenedor">
-    <a href="index.html"><img src="assets/logo.png" alt="Caro's Docubox, ir al inicio"></a>
-    <p>Referentes para seguir en redes y artículos que vale la pena leer, en marketing, diseño y desarrollo web.</p>
-    <nav aria-label="Principal">
-      <a href="index.html">Referentes</a>
-      <a href="articulos.html" aria-current="page">Artículos</a>
-    </nav>
-  </header>
-
-  <main class="contenedor">
-    <h1>Artículos recomendados</h1>
-    <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoría"></div>
-    <div class="grid" id="lista"></div>
-  </main>
-
+<body data-secciones="articulos">
+  <main class="contenedor"></main>
   <footer>Hecho con cariño para los alumnos · <a href="https://github.com/carocromatica/docubox">GitHub</a></footer>
   <script src="datos.js"></script>
   <script src="app.js"></script>
-  <script>montarSeccion(ARTICULOS, tarjetaArticulo);</script>
 </body>
 </html>
