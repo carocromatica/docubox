@@ -1,10 +1,17 @@
 # docubox
 
-![Logo Caros Docubox](logo_caros_docubox.png)
+![Logo Caros Docubox](assets/logo.png)
 
-## Guías y Tutoriales
+Sitio con referentes para seguir en redes sociales y artículos recomendados sobre marketing, diseño y desarrollo web.
 
-Aquí iré recopilando recursos y guías útiles sobre diseño y desarrollo:
+## Agregar contenido
 
-### [How to Build a Figma-to-Code Design Token Pipeline — Part 1](https://www.designsystemscollective.com/how-to-build-a-figma-to-code-design-token-pipeline-part-1-8b66ef9a45d4)
-Guía práctica sobre cómo construir un flujo de trabajo sincronizado para transformar variables de Figma (mediante la exportación a un archivo JSON) en código funcional utilizando **Style Dictionary**, automatizando la consistencia visual y evitando que los valores de diseño y código diverjan (*design drift*).
+Edita solo [`datos.js`](datos.js): copia un bloque de `CREADORES` o `ARTICULOS`, cambia los datos y haz commit. El sitio se actualiza solo.
+
+## Ver en local
+
+```bash
+python3 -m http.server 8000
+```
+
+Abre http://localhost:8000.

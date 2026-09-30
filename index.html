@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caro's Docubox · Referentes y lecturas</title>
+  <meta name="description" content="Creadores de contenido para seguir y artículos recomendados sobre marketing y desarrollo web.">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="contenedor">
+    <img src="assets/logo.png" alt="Caro's Docubox">
+    <p>Referentes para seguir en redes y artículos que vale la pena leer, en marketing, diseño y desarrollo web.</p>
+  </header>
+
+  <main class="contenedor">
+    <section>
+      <h2>Referentes para seguir</h2>
+      <div class="grid" id="creadores"></div>
+    </section>
+    <section>
+      <h2>Artículos recomendados</h2>
+      <div class="grid" id="articulos"></div>
+    </section>
+  </main>
+
+  <footer>Hecho con cariño para los alumnos · <a href="https://github.com/carocromatica/docubox">GitHub</a></footer>
+
+  <script src="datos.js"></script>
+  <script>
+    const el = (tag, props = {}, ...hijos) => {
+      const n = Object.assign(document.createElement(tag), props);
+      n.append(...hijos);
+      return n;
+    };
+    const enlace = (url, texto, clase = "") =>
+      el("a", { href: url, textContent: texto, className: clase, target: "_blank", rel: "noopener noreferrer" });
+
+    document.getElementById("creadores").append(
+      ...CREADORES.map(c =>
+        el("article", { className: "tarjeta" },
+          el("span", { className: "etiqueta", textContent: c.area }),
+          el("h3", { textContent: c.nombre }),
+          el("p", { textContent: c.descripcion }),
+          el("div", { className: "enlaces" }, ...c.enlaces.map(e => enlace(e.url, e.red)))
+        )
+      )
+    );
+
+    document.getElementById("articulos").append(
+      ...ARTICULOS.map(a =>
+        el("article", { className: "tarjeta" },
+          el("span", { className: "etiqueta", textContent: a.area }),
+          el("h3", { textContent: a.titulo }),
+          el("span", { className: "fuente", textContent: a.fuente }),
+          el("p", { textContent: a.descripcion }),
+          enlace(a.url, "Leer artículo →", "leer")
+        )
+      )
+    );
+  </script>
+</body>
+</html>
