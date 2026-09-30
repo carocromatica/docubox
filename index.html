@@ -15,19 +15,20 @@
     <a href="index.html"><img src="assets/logo.png" alt="Caro's Docubox, ir al inicio"></a>
     <p>Referentes para seguir en redes y artículos que vale la pena leer, en marketing, diseño y desarrollo web.</p>
     <nav aria-label="Principal">
-      <a href="referentes.html">Referentes</a>
+      <a href="index.html" aria-current="page">Referentes</a>
       <a href="articulos.html">Artículos</a>
     </nav>
   </header>
 
   <main class="contenedor">
-    <div class="grid">
-      <a class="tarjeta portada" href="referentes.html"><h3>Referentes →</h3><p>Creadores de contenido para seguir en redes sociales.</p></a>
-      <a class="tarjeta portada" href="articulos.html"><h3>Artículos →</h3><p>Lecturas interesantes que voy encontrando por internet.</p></a>
-    </div>
+    <h1>Referentes para seguir</h1>
+    <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoría"></div>
+    <div class="grid" id="lista"></div>
   </main>
 
   <footer>Hecho con cariño para los alumnos · <a href="https://github.com/carocromatica/docubox">GitHub</a></footer>
-
+  <script src="datos.js"></script>
+  <script src="app.js"></script>
+  <script>montarSeccion(CREADORES, tarjetaCreador);</script>
 </body>
 </html>
